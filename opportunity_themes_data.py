@@ -384,5 +384,421 @@ opportunity_themes = [
         paper_process="Executive approval only; already a vendor",
         competition="Tableau",
         category="Analytics"
+    ),
+    OpportunityTheme(
+        theme="Expand into EMEA market",
+        metrics="Increase EMEA revenue by 20% within 12 months.",
+        decision_criteria="Needs multi-currency, multilingual support and strong local compliance.",
+        decision_process="Working with international consultants, final decision in 45 days.",
+        identify_pain="Limited market share in Europe due to lack of localized presence.",
+        notes={
+            "why": "Global expansion is part of the annual growth strategy.",
+            "why_now": "Just opened new EMEA HQ and hired regional leadership.",
+            "why_this_product": "We offer region-specific compliance and localization out of the box."
+        },
+        opportunity_type="New Business",
+        paper_process="International procurement team and legal review required.",
+        competition="Evaluating a German competitor with limited integrations.",
+        category="International Expansion"
+    ),
+    OpportunityTheme(
+        theme="Automate financial reporting",
+        metrics="Cut manual reporting hours by 60%.",
+        decision_criteria="Must integrate with existing ERP and support GAAP compliance.",
+        decision_process="Finance team piloting two platforms; exec sponsor signs off next month.",
+        identify_pain="Quarter-end closing takes too long due to manual data pulls.",
+        notes={
+            "why": "Manual processes are delaying strategic analysis.",
+            "why_now": "New CFO is driving automation initiatives.",
+            "why_this_product": "Our automation engine pulls real-time data from ERPs seamlessly."
+        },
+        opportunity_type="Upsell",
+        paper_process="Finance-led vendor onboarding and security review.",
+        competition="Oracle module and one FinTech startup.",
+        category="Finance Automation"
+    ),
+    OpportunityTheme(
+        theme="Replace legacy support system",
+        metrics="Improve CSAT by 15% and reduce ticket resolution time by 30%.",
+        decision_criteria="Needs omnichannel support, AI-powered routing, and SLA tracking.",
+        decision_process="IT and CX teams reviewing RFP responses, shortlist in 3 weeks.",
+        identify_pain="Current system lacks automation and analytics.",
+        notes={
+            "why": "Customer satisfaction is flatlining despite growing headcount.",
+            "why_now": "Recent leadership shift in CX department.",
+            "why_this_product": "Only vendor offering native AI routing and full audit trails."
+        },
+        opportunity_type="Rip and Replace",
+        paper_process="Procurement and InfoSec involved.",
+        competition="Zendesk, Salesforce Service Cloud.",
+        category="Customer Experience"
+    ),
+    OpportunityTheme(
+        theme="Consolidate martech stack",
+        metrics="Cut martech costs by 25% and increase campaign efficiency.",
+        decision_criteria="Must replace 3 tools and offer advanced segmentation.",
+        decision_process="Marketing and RevOps running a proof of concept.",
+        identify_pain="Tool fragmentation leads to inconsistent customer journeys.",
+        notes={
+            "why": "Stack is bloated and slowing campaigns down.",
+            "why_now": "New VP of Marketing initiated consolidation.",
+            "why_this_product": "We combine 4 tools into one, with better data integrity."
+        },
+        opportunity_type="Consolidation",
+        paper_process="CMO sign-off with IT data audit.",
+        competition="HubSpot, Iterable.",
+        category="Marketing Ops"
+    ),
+    OpportunityTheme(
+        theme="Prepare for IPO compliance",
+        metrics="Achieve SOX readiness and close audits in <30 days.",
+        decision_criteria="Needs full audit trails, role-based access, and secure archiving.",
+        decision_process="Internal compliance team is building shortlist from Big 4 guidance.",
+        identify_pain="Current systems don't support detailed tracking or retention.",
+        notes={
+            "why": "Company targets IPO by Q2 next year.",
+            "why_now": "Board requested internal readiness audit.",
+            "why_this_product": "Our solution is SOC2 + SOX compliant with rapid deployment."
+        },
+        opportunity_type="Compliance",
+        paper_process="Legal, compliance, and external counsel involved.",
+        competition="Workiva, proprietary solutions.",
+        category="Risk & Compliance"
+    ),
+    OpportunityTheme(
+        theme="Launch embedded payments",
+        metrics="Add new revenue stream by enabling payments within platform.",
+        decision_criteria="PCI compliance, white-label support, and low transaction fees required.",
+        decision_process="Product and Finance teams are doing feasibility assessment.",
+        identify_pain="Current offering lacks monetization beyond subscriptions.",
+        notes={
+            "why": "Leadership wants to diversify revenue with financial services.",
+            "why_now": "Market pressure and investor interest in fintech integrations.",
+            "why_this_product": "We offer ready-to-integrate APIs with compliance and fraud detection."
+        },
+        opportunity_type="New Revenue Line",
+        paper_process="Finance, product, and legal to approve jointly.",
+        competition="Stripe Connect, Adyen.",
+        category="Product-Led Growth"
+    ),
+    OpportunityTheme(
+        theme="Implement ESG reporting",
+        metrics="Enable quarterly ESG disclosures with 100% audit readiness.",
+        decision_criteria="Must support GRI and SASB standards with data ingestion.",
+        decision_process="ESG team is piloting with Sustainability Ops and third-party auditor.",
+        identify_pain="Manual ESG tracking is inconsistent and not auditable.",
+        notes={
+            "why": "Investors are asking for transparent ESG metrics.",
+            "why_now": "ESG audit coming up in Q4.",
+            "why_this_product": "Only vendor with native SASB/GRI templates and verification APIs."
+        },
+        opportunity_type="Compliance",
+        paper_process="Board-level approval and 3rd-party audit review.",
+        competition="Workiva ESG, Microsoft Sustainability Manager.",
+        category="Sustainability"
+    ),
+    OpportunityTheme(
+        theme="Streamline channel sales operations",
+        metrics="Reduce partner onboarding time by 40%.",
+        decision_criteria="Partner portal, co-selling workflows, and approval flows required.",
+        decision_process="Channel Ops team issuing RFI to 3 vendors.",
+        identify_pain="Manual partner management delays revenue collection.",
+        notes={
+            "why": "New VP of Channels is restructuring partner tiers.",
+            "why_now": "Q2 partner pipeline is blocked by onboarding delays.",
+            "why_this_product": "Purpose-built for channel workflows and deal registration."
+        },
+        opportunity_type="Channel Expansion",
+        paper_process="Channel leadership and deal desk.",
+        competition="Salesforce PRM, Channeltivity.",
+        category="Sales Ops"
+    ),
+    OpportunityTheme(
+        theme="Enhance product analytics",
+        metrics="Increase product engagement by 25% in 6 months.",
+        decision_criteria="Granular event tracking, retention cohorting, and funnel visualization.",
+        decision_process="Product managers evaluating 3 vendors via sandbox environments.",
+        identify_pain="Current tool lacks visibility into feature-level adoption.",
+        notes={
+            "why": "Product roadmap tied to usage-based growth KPIs.",
+            "why_now": "Launching new features and want instant feedback loops.",
+            "why_this_product": "Best-in-class cohorting and product-led insight engine."
+        },
+        opportunity_type="Upsell",
+        paper_process="Product and analytics heads approve together.",
+        competition="Heap, Amplitude.",
+        category="Product Analytics"
+    ),
+    OpportunityTheme(
+        theme="Reduce billing disputes",
+        metrics="Reduce invoice dispute rates from 12% to 2%.",
+        decision_criteria="Automated billing rules, preview invoicing, and audit logs.",
+        decision_process="Finance automation initiative led by RevOps and billing team.",
+        identify_pain="Frequent errors in contract-to-invoice mapping.",
+        notes={
+            "why": "Billing disputes delay cash flow and impact trust.",
+            "why_now": "Recent customer churn attributed to billing issues.",
+            "why_this_product": "We integrate directly with CRM and CPQ to avoid mismatch."
+        },
+        opportunity_type="Customer Retention",
+        paper_process="RevOps and finance sign-off required.",
+        competition="Zuora, in-house scripts.",
+        category="Revenue Ops"
+    ),
+    OpportunityTheme(
+        theme="Monitor SaaS usage for cost control",
+        metrics="Cut unused SaaS spend by 20% across departments.",
+        decision_criteria="SSO integrations, usage visibility, and renewal alerting.",
+        decision_process="Procurement and IT evaluating vendors with finance overlay.",
+        identify_pain="Shadow IT causing overspend and redundancy.",
+        notes={
+            "why": "CFO aims to rein in uncontrolled SaaS growth.",
+            "why_now": "Renewal calendar spiked this quarter.",
+            "why_this_product": "Deep integrations with Okta and license reconciliation tools."
+        },
+        opportunity_type="Cost Optimization",
+        paper_process="Procurement and budget owner alignment.",
+        competition="Zluri, Torii, spreadsheets.",
+        category="IT Finance"
+    ),
+    OpportunityTheme(
+        theme="Prevent insider threats",
+        metrics="Detect and mitigate insider incidents in <24 hours.",
+        decision_criteria="User behavior monitoring, data exfiltration alerts, and role-based rules.",
+        decision_process="Security team conducting internal red-team exercises.",
+        identify_pain="Recent data leak traced to privileged access misuse.",
+        notes={
+            "why": "Leadership is concerned about internal risk surface.",
+            "why_now": "Regulators flagged insider monitoring as weak.",
+            "why_this_product": "Proactive user behavior analytics with SOC integration."
+        },
+        opportunity_type="Security Upgrade",
+        paper_process="CISO and legal alignment required.",
+        competition="ObserveIT, Varonis.",
+        category="Cybersecurity"
+    ),
+    OpportunityTheme(
+        theme="Launch virtual onboarding for remote hires",
+        metrics="Reduce new hire time-to-productivity from 40 to 20 days.",
+        decision_criteria="Workflow automation, LMS integration, and HRIS sync.",
+        decision_process="HR and IT co-sponsoring pilot with two platforms.",
+        identify_pain="Remote hires are underperforming vs. on-site cohort.",
+        notes={
+            "why": "Workforce is now 70% remote.",
+            "why_now": "Q2 hiring spike requires scalable onboarding.",
+            "why_this_product": "Smooth remote onboarding with built-in analytics."
+        },
+        opportunity_type="HR Transformation",
+        paper_process="HR tech committee and CIO approval.",
+        competition="Rippling, Workday LMS module.",
+        category="People Ops"
+    ),
+    OpportunityTheme(
+        theme="Improve mobile user retention",
+        metrics="Lift D30 retention from 10% to 20%.",
+        decision_criteria="Push notification optimization, A/B testing, and deep linking.",
+        decision_process="Growth team running experiments across tools.",
+        identify_pain="Mobile retention lags despite feature parity.",
+        notes={
+            "why": "Mobile segment is the company’s fastest-growing user base.",
+            "why_now": "Churn is limiting LTV for mobile customers.",
+            "why_this_product": "Best-in-class mobile engagement orchestration."
+        },
+        opportunity_type="User Growth",
+        paper_process="Growth and mobile leads to approve.",
+        competition="Leanplum, OneSignal.",
+        category="Growth Marketing"
+    ),
+    OpportunityTheme(
+        theme="Establish unified customer view",
+        metrics="90% identity resolution rate across platforms.",
+        decision_criteria="Cross-channel ID stitching, CDP integrations, privacy compliance.",
+        decision_process="Data team leading architecture design with marketing input.",
+        identify_pain="Customer data lives in silos with no single view.",
+        notes={
+            "why": "Without unified data, personalization is impossible.",
+            "why_now": "Personalization mandates added to H2 OKRs.",
+            "why_this_product": "Real-time CDP with flexible schema mapping."
+        },
+        opportunity_type="Data Unification",
+        paper_process="Data governance and security approval flow.",
+        competition="Segment, BlueConic.",
+        category="Data Strategy"
+    ),
+    OpportunityTheme(
+        theme="Automate SOC 2 readiness",
+        metrics="Complete SOC 2 audit prep in under 6 weeks.",
+        decision_criteria="Evidence collection automation, risk scoring, and pre-built controls.",
+        decision_process="Security team evaluating vendors against auditor checklist.",
+        identify_pain="Manual readiness takes too long and risks missed evidence.",
+        notes={
+            "why": "Customer asks for SOC 2 during procurement.",
+            "why_now": "New enterprise contracts blocked until SOC 2 is ready.",
+            "why_this_product": "Out-of-the-box SOC 2 policy engine and integrations."
+        },
+        opportunity_type="Security Certification",
+        paper_process="Audit team, CISO, and external auditor approval.",
+        competition="Vanta, Drata.",
+        category="Information Security"
+    ),
+    OpportunityTheme(
+        theme="Automate compliance reporting",
+        metrics="Reduce time spent on compliance reporting by 75%.",
+        decision_criteria="Must integrate with existing data warehouse and generate export-ready reports.",
+        decision_process="CFO and Risk Manager reviewing automation tools. Decision expected by end of quarter.",
+        identify_pain="Manual compliance reports take weeks and are prone to human error.",
+        notes={
+            "why": "Compliance audits are increasing in frequency and complexity.",
+            "why_now": "A recent audit highlighted inconsistencies in manual reporting.",
+            "why_this_product": "Our solution auto-generates reports directly from verified data sources."
+        },
+        opportunity_type="New Business",
+        paper_process="Legal review and data security assessment required.",
+        competition="Facing competition from a niche RegTech vendor.",
+        category="Compliance Automation"
+    ),
+    OpportunityTheme(
+        theme="Improve employee engagement",
+        metrics="Increase employee eNPS score by 20 points within a year.",
+        decision_criteria="Needs pulse surveys, engagement analytics, and real-time dashboards.",
+        decision_process="HR and IT teams are conducting joint evaluations with demos.",
+        identify_pain="Low morale and high turnover in key departments.",
+        notes={
+            "why": "Engagement directly impacts retention and productivity.",
+            "why_now": "Recent employee survey showed a sharp drop in satisfaction.",
+            "why_this_product": "Our platform offers targeted feedback loops and engagement playbooks."
+        },
+        opportunity_type="Expansion",
+        paper_process="Needs HR, Legal, and IT sign-off.",
+        competition="Competing against incumbent HCM solution.",
+        category="People Operations"
+    ),
+    OpportunityTheme(
+        theme="Streamline vendor onboarding",
+        metrics="Reduce vendor onboarding time from 6 weeks to 2 weeks.",
+        decision_criteria="Requires document collection automation and workflow routing.",
+        decision_process="Procurement lead is championing the initiative; board approval needed.",
+        identify_pain="Delays in onboarding impact project timelines and budget.",
+        notes={
+            "why": "Current vendor onboarding is manual and error-prone.",
+            "why_now": "Company scaling partnerships rapidly and process can't keep up.",
+            "why_this_product": "Our workflow engine automates compliance checks and document collection."
+        },
+        opportunity_type="New Business",
+        paper_process="Standard procurement process with risk review.",
+        competition="Custom-built internal tools.",
+        category="Procurement & Ops"
+    ),
+    OpportunityTheme(
+        theme="Forecast revenue more accurately",
+        metrics="Improve forecast accuracy from 70% to 95%.",
+        decision_criteria="Must integrate with CRM and support scenario modeling.",
+        decision_process="RevOps and Finance collaborating; vendor shortlist created.",
+        identify_pain="Frequent misses on quarterly projections.",
+        notes={
+            "why": "Better forecasting drives better strategic decisions.",
+            "why_now": "New CFO pushing for precision and accountability.",
+            "why_this_product": "We offer AI-powered forecast modeling with CRM sync."
+        },
+        opportunity_type="New Business",
+        paper_process="Legal review and compliance with SOX standards.",
+        competition="Spreadsheets and legacy forecasting tools.",
+        category="Revenue Operations"
+    ),
+    OpportunityTheme(
+        theme="Increase product adoption",
+        metrics="Grow active user base by 40% in the next 6 months.",
+        decision_criteria="Needs in-app nudges, analytics, and segmentation tools.",
+        decision_process="Product team evaluating tools in parallel with user research.",
+        identify_pain="Users sign up but don’t engage beyond the first week.",
+        notes={
+            "why": "Adoption is lagging despite marketing efforts.",
+            "why_now": "Product-led growth strategy just launched.",
+            "why_this_product": "Our in-app guidance and analytics improve activation rates."
+        },
+        opportunity_type="Expansion",
+        paper_process="Fast-track pilot with Product team approval.",
+        competition="Lightweight no-code competitors.",
+        category="Product Growth"
+    ),
+    OpportunityTheme(
+        theme="Strengthen data privacy controls",
+        metrics="Achieve full GDPR/CCPA compliance across all user data.",
+        decision_criteria="Must provide automated data subject request handling.",
+        decision_process="Legal and Engineering teams collaborating on selection.",
+        identify_pain="Risk of non-compliance penalties and brand damage.",
+        notes={
+            "why": "Data privacy regulations are tightening globally.",
+            "why_now": "A recent breach incident triggered internal review.",
+            "why_this_product": "Built-in workflows for deletion, access, and consent."
+        },
+        opportunity_type="New Business",
+        paper_process="Mandatory review by InfoSec and legal.",
+        competition="Legacy data governance solutions.",
+        category="Security & Compliance"
+    ),
+    OpportunityTheme(
+        theme="Accelerate invoice processing",
+        metrics="Reduce average invoice processing time by 80%.",
+        decision_criteria="Needs OCR, approval routing, and ERP integration.",
+        decision_process="Finance and AP departments reviewing solutions jointly.",
+        identify_pain="Manual invoicing leads to delayed payments and missed discounts.",
+        notes={
+            "why": "Late payments hurt supplier relationships and incur fees.",
+            "why_now": "High invoice volume expected with upcoming expansion.",
+            "why_this_product": "We provide intelligent capture and automated workflows."
+        },
+        opportunity_type="New Business",
+        paper_process="Standard Finance-led procurement flow.",
+        competition="Manual processes and basic AP tools.",
+        category="Finance Automation"
+    ),
+    OpportunityTheme(
+        theme="Reduce cloud costs",
+        metrics="Cut monthly cloud spend by 30% without impacting performance.",
+        decision_criteria="Must support real-time monitoring and automated scaling.",
+        decision_process="DevOps and Finance teams jointly reviewing solutions.",
+        identify_pain="Unpredictable costs due to underutilized resources.",
+        notes={
+            "why": "Cloud costs are outpacing revenue growth.",
+            "why_now": "Leadership launched a cost-efficiency mandate.",
+            "why_this_product": "Our platform offers optimization insights and automation."
+        },
+        opportunity_type="Expansion",
+        paper_process="Cloud cost center approval only.",
+        competition="Cloud-native billing tools.",
+        category="IT & Infrastructure"
+    ),
+    OpportunityTheme(
+        theme="Modernize IT ticketing system",
+        metrics="Reduce internal ticket resolution time by 50%.",
+        decision_criteria="Requires AI routing, SLAs, and integration with Slack.",
+        decision_process="IT Director running pilot with two vendors.",
+        identify_pain="Tickets pile up and support quality suffers.",
+        notes={
+            "why": "IT team is understaffed and overwhelmed.",
+            "why_now": "Employee satisfaction score dropped due to IT response delays.",
+            "why_this_product": "We use ML to route and resolve IT issues quickly."
+        },
+        opportunity_type="Replacement",
+        paper_process="IT and procurement review process.",
+        competition="Jira Service Management and Freshdesk.",
+        category="IT Operations"
+    ),
+    OpportunityTheme(
+        theme="Unify marketing analytics",
+        metrics="Achieve a 360° view of campaign performance across all channels.",
+        decision_criteria="Requires multi-touch attribution and real-time dashboards.",
+        decision_process="Marketing and BI teams evaluating via trial access.",
+        identify_pain="Siloed data prevents meaningful attribution.",
+        notes={
+            "why": "They need to prove marketing ROI to secure budget.",
+            "why_now": "New VP of Marketing demanding unified visibility.",
+            "why_this_product": "We connect all platforms and offer deep cross-channel insights."
+        },
+        opportunity_type="New Business",
+        paper_process="Marketing ops review and IT sign-off.",
+        competition="Existing BI dashboards and spreadsheets.",
+        category="Marketing Analytics"
     )
 ]

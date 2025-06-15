@@ -7,6 +7,8 @@ fake = Faker()
 
 # Your generate_opportunity() here
 
+assert len(public_companies) == len(opportunity_themes)
+
 def generate_opportunity(index):
     company = public_companies[index]  # one opportunity per company
     opportunity_data = {
@@ -25,7 +27,7 @@ def generate_opportunity(index):
         theme = opportunity_themes[index]  # one-to-one mapping with company
         opportunity_data.update({
             "Opportunity Name": f"{company} - {theme.theme}",
-            "Metrics": theme.metric,
+            "Metrics": theme.metrics,
             "Decision Criteria": theme.decision_criteria,
             "Decision Process": theme.decision_process,
             "Identify Pain": theme.identify_pain,
@@ -48,9 +50,9 @@ def generate_opportunity(index):
             "Identify Pain", "Opportunity Type", "Paper Process", "Competition",
             "Category", "Notes", "Economic Buyer", "Champion"
         ]:
-            opportunity[field] = None
+            opportunity_data[field] = None
 
-    return opportunity
+    return opportunity_data
 
 if __name__ == "__main__":
     for i in range(len(public_companies)):  # assuming 50 companies
