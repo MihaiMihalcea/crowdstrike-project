@@ -16,7 +16,7 @@ def generate_opportunity(index):
         "Account Name": company,
         "Stage": stages[0],
         "Close Date": fake.date_between(start_date="+30d", end_date="+120d"),
-        "Amount": round(random.uniform(10000, 250000), 2),
+        "Amount": f"${random.randint(100000, 2500000)}",
         "Owner": fake.name(),
         "Created Date": fake.date_between(start_date="-30d", end_date="today"),
         "Lead Source": random.choice(lead_sources),

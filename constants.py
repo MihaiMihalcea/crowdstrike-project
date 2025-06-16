@@ -76,8 +76,3 @@ medd_fields = [
     "Metrics", "Economic Buyer", "Decision Criteria", "Decision Process",
     "Paper Process", "Identify Pain", "Champion", "Competition"
 ]
-
-cost_types = ["operational costs", "cloud infrastructure spend", "customer acquisition cost"]
-percentages = ["10%", "25%", "40%", "50%"]
-timeframes = ["quarter", "6 months", "fiscal year"]
-amounts = ["$100K", "$250K", "$1M"]
