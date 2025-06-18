@@ -1,4 +1,4 @@
-# ─── PROMPT ──────────────────────────────────────────────────────────────────
+# Single source of truth for all prompts.
 
 PROMPT_SYSTEM = "You are a helpful assistant."
 
@@ -57,4 +57,4 @@ frameworks such as MEDDPICC.
 
 Here is the data:
 %s
-"""  # we’ll format in a dict and the model name
+"""  # Data will be formated in a dictionary.

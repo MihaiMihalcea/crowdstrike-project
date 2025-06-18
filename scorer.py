@@ -1,5 +1,3 @@
-# score_opportunities.py
-
 import time
 import math
 import json
@@ -14,7 +12,16 @@ from prompt import PROMPT_SYSTEM, PROMPT_TEMPLATE
 load_dotenv()  # loads OPENAI_API_KEY and OPENAI_MODEL from .env
 
 class Scorer:
+    """
+    Encapsulates the scoring pipeline:
+      - read CSV
+      - sanitize each record
+      - send prompt to OpenAI
+      - parse and enrich response
+      - write scored data to CSV
+    """
     def __init__(self, input_file=None, output_file=None, model_name=None, temperature=0.3):
+        """Initialize with input/output paths, model name, temperature."""
         self.input_file   = input_file
         self.output_file  = output_file
         self.model_name   = model_name
@@ -34,7 +41,7 @@ class Scorer:
     @staticmethod
     def parse_json_with_fallback(text: str, opp_name: str) -> dict:
         """
-        Try json.loads; if it fails, extract first {...} block and retry.
+        Try json.loads; if it fails, extract first entry block and retry.
         Logs unparseable cases.
         """
         try:
@@ -61,8 +68,8 @@ class Scorer:
             }
 
     def score_opportunity(self, opportunity: dict) -> dict:
+        """Score a single opportunity, timing the call and handling errors."""
         opp = self.sanitize_opportunity(opportunity)
-        # 2. Build and send prompt
         user_content = PROMPT_TEMPLATE % json.dumps(opp, indent=2)
         messages = [
             {"role": "system", "content": PROMPT_SYSTEM},
@@ -98,6 +105,7 @@ class Scorer:
         return data
 
     def run(self):
+        """Run the full pipeline with a tqdm progress bar."""
         df      = pd.read_csv(self.input_file)
         records = df.to_dict(orient="records")
         results = []

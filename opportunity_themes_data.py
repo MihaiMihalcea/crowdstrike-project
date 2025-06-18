@@ -1,5 +1,6 @@
 from opportunity_theme import OpportunityTheme
 
+# List of 50 predefined themes—one per company.
 opportunity_themes = [
     OpportunityTheme(
         theme="Improve lead qualification",

@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 
-# 1. Load .env (so environment variables are available)
+# Load environment vars and instantiate the OpenAI client.
 load_dotenv()
 
 # 2. Read the key
@@ -20,6 +20,12 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 
 # 5. Helper
 def chat_completion(messages, **kwargs):
+    """
+    Send a chat-completion request to OpenAI.
+
+    :param messages: list of {"role":..., "content":...} dicts.
+    :param kwargs: any other OpenAI parameters (temperature, etc.).
+    """
     return client.chat.completions.create(
         model=MODEL,
         messages=messages,

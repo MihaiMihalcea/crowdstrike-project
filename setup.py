@@ -2,10 +2,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="opportunity_pipeline",
+    name="CrowdStrike Project",
     version="0.1.0",
-    description="Generate and score synthetic sales opportunities via MEDDPICC + OpenAI",
-    author="Your Name",
+    description="Generate and score synthetic sales opportunities using MEDDPICC framework, via OpenAI",
+    author="Mihai Mihalcea",
     python_requires=">=3.8",
     packages=find_packages(),
     install_requires=[
@@ -18,9 +18,9 @@ setup(
     entry_points={
         "console_scripts": [
             # After install, these commands become available
-            "opp-generate = data_generator:main",
-            "opp-score    = scorer:main",
-            "opp-pipeline = main:main",
+            "python main.py"
+            "python main.py --skip-generate"
+            "python main.py --skip-score"
         ],
     },
 )

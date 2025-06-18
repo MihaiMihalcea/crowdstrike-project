@@ -19,6 +19,16 @@ def save_opportunities_to_csv(
     filename: str,
     num_opportunities: int = 50
 ) -> None:
+    """
+    Generate synthetic opportunities and save to CSV.
+
+    Args:
+        filename (str): Path to output CSV file.
+        num_opportunities (int): Number of opportunities to generate.
+
+    Returns:
+        None
+    """
     df = generate_opportunity_dataframe(num_opportunities)
     df.to_csv(filename, index=False)
     print(f"CSV file saved as '{filename}'")

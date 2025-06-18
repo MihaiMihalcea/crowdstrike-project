@@ -26,6 +26,11 @@ def parse_args():
     return p.parse_args()
 
 def main():
+    """
+    CLI entry point. Orchestrates:
+      1) data generation via data_generator
+      2) scoring via Scorer
+    """
     args = parse_args()
     run_folder = make_run_folder()
     synth_path = os.path.join(run_folder, "synthetic_opportunities.csv")

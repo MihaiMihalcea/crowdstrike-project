@@ -10,6 +10,16 @@ fake = Faker()
 assert len(public_companies) == len(opportunity_themes)
 
 def generate_opportunity(index: int, include_meddpicc: bool) -> dict:
+    """
+    Create one synthetic opportunity record.
+
+    Args:
+      index: index into public_companies & opportunity_themes lists.
+      include_meddpicc: whether to populate MEDDPICC fields.
+
+    Returns:
+      A dict mapping CSV column names to values.
+    """
     company = public_companies[index]  # one opportunity per company
     opportunity_data = {
         "Opportunity ID": f"OPP-{1000 + index}",

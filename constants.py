@@ -1,3 +1,8 @@
+"""
+Data components and data points used in the generating synthetic data process.
+"""
+
+# List of 50 public companies used to assign one opportunity each.
 public_companies = [
     "Apple Inc.",
     "Microsoft Corporation",
@@ -51,9 +56,13 @@ public_companies = [
     "Uber Technologies Inc."
 ]
 
+# Standard SFDC stages in order (we always start at stages[0]).
 stages = ["Stage 1 - Discovery"]
+
+# Common lead‐source values for opportunities.
 lead_sources = ["Web", "Partner", "Event", "Referral", "Outbound", "Inbound"]
 
+# Common business opportunity values for a company.
 opportunity_types = [
     "New Business",         # First-time deal with a new customer
     "Renewal",              # Renewing an existing subscription or contract
@@ -72,6 +81,7 @@ opportunity_types = [
     "Government Contract"   # Public sector-specific deals
 ]
 
+# MEDDPICC framework components.
 medd_fields = [
     "Metrics", "Economic Buyer", "Decision Criteria", "Decision Process",
     "Paper Process", "Identify Pain", "Champion", "Competition"
