@@ -1,4 +1,4 @@
-Opportunity Pipeline
+CrowdStrike Project
 
 This repository provides a complete end-to-end workflow to generate synthetic Salesforce-like opportunities and score them using OpenAI's GPT models, aligned with the MEDDPICC qualification framework.
 
@@ -6,7 +6,7 @@ This repository provides a complete end-to-end workflow to generate synthetic Sa
 
 Ensure you have Python 3.8+ installed. Then:
 
-# Clone the repo
+# Clone the repository
 git clone https://github.com/your-org/opportunity_pipeline.git
 cd opportunity_pipeline
 
@@ -30,17 +30,17 @@ Ensure .env is listed in .gitignore.
 📁 Project Structure
 
 /your_project/
-├── data_generator.py    # CLI: opp-generate
-├── prompts.py           # Prompt templates and system messages
-├── constants.py         # company, stages, and lead source lists
-├── opportunity_theme.py  # dataclass definition
-├── opportunity_themes_data.py # list of 50 themes
-├── scorer.py            # Scorer class and logic
-├── main.py              # CLI: opp-pipeline
-├── openai_client.py     # OpenAI client wrapper
-├── setup.py             # Package installation config
-├── .env                 # (gitignored) API credentials
-├── requirements.txt     # pinned dependencies
+├── data_generator.py            # CLI: opportunities generator
+├── prompts.py                   # Prompt templates and system messages
+├── constants.py                 # company, stages, and lead source lists
+├── opportunity_theme.py         # dataclass definition
+├── opportunity_themes_data.py   # list of 50 themes
+├── scorer.py                    # Scorer class and logic
+├── main.py                      # CLI: opp-pipeline
+├── openai_client.py             # OpenAI client wrapper
+├── setup.py                     # Package installation config
+├── .env                         # OpenAI API credentials
+├── requirements.txt             # pinned dependencies
 ├── synthetic_opportunities.csv  # generated input data
 └── scored_opportunities.csv     # scored output data
 

@@ -1,4 +1,5 @@
 # created by virtualenv automatically
+runs/
 .venv/
 __pycache__/
 *.pyc
@@ -8,5 +9,3 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-synthetic_opportunities.csv
-scored_opportunities.csv

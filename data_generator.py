@@ -16,16 +16,10 @@ def generate_opportunity_dataframe(num_opportunities: int = 50) -> pd.DataFrame:
     return pd.DataFrame(opportunities)
 
 def save_opportunities_to_csv(
-    filename: str = "synthetic_opportunities.csv",
+    filename: str,
     num_opportunities: int = 50
 ) -> None:
     df = generate_opportunity_dataframe(num_opportunities)
     df.to_csv(filename, index=False)
     print(f"CSV file saved as '{filename}'")
 
-def main():
-    """CLI entry-point for data generation."""
-    save_opportunities_to_csv()
-
-if __name__ == "__main__":
-    save_opportunities_to_csv()

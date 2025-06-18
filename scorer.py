@@ -1,6 +1,5 @@
 # score_opportunities.py
 
-import os
 import time
 import math
 import json
@@ -16,9 +15,9 @@ load_dotenv()  # loads OPENAI_API_KEY and OPENAI_MODEL from .env
 
 class Scorer:
     def __init__(self, input_file=None, output_file=None, model_name=None, temperature=0.3):
-        self.input_file   = input_file  or os.getenv("SCORE_INPUT_FILE",  "synthetic_opportunities.csv")
-        self.output_file  = output_file or os.getenv("SCORE_OUTPUT_FILE", "scored_opportunities.csv")
-        self.model_name   = model_name  or os.getenv("OPENAI_MODEL",       "gpt-3.5-turbo")
+        self.input_file   = input_file
+        self.output_file  = output_file
+        self.model_name   = model_name
         self.temperature  = temperature
     @staticmethod
     def sanitize_opportunity(opportunity: dict) -> dict:
@@ -71,7 +70,7 @@ class Scorer:
         ]
         start = time.time()
         try:
-            resp = chat_completion(messages=messages, model=self.model_name, temperature=self.temperature)
+            resp = chat_completion(messages=messages, temperature=self.temperature)
             end = time.time()
             raw = resp.choices[0].message.content.strip()
             data = self.parse_json_with_fallback(raw, opp.get("Opportunity Name", "Unknown"))
