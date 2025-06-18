@@ -9,3 +9,4 @@ __pycache__/
 dist/
 build/
 synthetic_opportunities.csv
+scored_opportunities.csv

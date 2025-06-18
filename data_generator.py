@@ -1,16 +1,31 @@
+import random
 import pandas as pd
-from main import generate_opportunity  # Adjust path if needed
+from opportunity_generator import generate_opportunity  # updated below to accept a flag
 
-def generate_opportunity_dataframe(num_opportunities=50):
-    opportunities = [generate_opportunity(i) for i in range(num_opportunities)]
-    df = pd.DataFrame(opportunities)
-    return df
+def generate_opportunity_dataframe(num_opportunities: int = 50) -> pd.DataFrame:
+    # 1. Build a list with exactly half True (include MEDDPICC) and half False
+    half = num_opportunities // 2
+    flags = [True]*half + [False]*(num_opportunities - half)
+    random.shuffle(flags)
 
-def save_opportunities_to_csv(filename="synthetic_opportunities.csv", num_opportunities=50):
+    # 2. Generate each opportunity with the corresponding flag
+    opportunities = [
+        generate_opportunity(i, include_meddpicc=flags[i])
+        for i in range(num_opportunities)
+    ]
+    return pd.DataFrame(opportunities)
+
+def save_opportunities_to_csv(
+    filename: str = "synthetic_opportunities.csv",
+    num_opportunities: int = 50
+) -> None:
     df = generate_opportunity_dataframe(num_opportunities)
     df.to_csv(filename, index=False)
     print(f"CSV file saved as '{filename}'")
 
-# Optional: run when script is executed directly
+def main():
+    """CLI entry-point for data generation."""
+    save_opportunities_to_csv()
+
 if __name__ == "__main__":
     save_opportunities_to_csv()
