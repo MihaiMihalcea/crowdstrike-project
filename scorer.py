@@ -1,3 +1,5 @@
+import os
+import csv
 import time
 import math
 import json
@@ -8,7 +10,7 @@ from openai_client import chat_completion
 from tqdm import tqdm
 from prompt import PROMPT_SYSTEM, PROMPT_TEMPLATE
 
-# ─── CONFIG ──────────────────────────────────────────────────────────────────
+# ─── CONFIG ────────────────────────────────────────────────────
 load_dotenv()  # loads OPENAI_API_KEY and OPENAI_MODEL from .env
 
 class Scorer:
@@ -20,11 +22,28 @@ class Scorer:
       - parse and enrich response
       - write scored data to CSV
     """
-    def __init__(self, input_file=None, output_file=None, model_name=None, temperature=0.3):
-        """Initialize with input/output paths, model name, temperature."""
+    def __init__(self,
+                 input_file: str,
+                 output_file: str,
+                 model_name: str | None = None,
+                 temperature: float = 0.3):
+        """
+        Initialize pipeline.
+
+        Args:
+        input_file:  path to the synthetic opportunities CSV.
+        output_file: path to write the scored CSV.
+        model_name:  API model to use (falls back to OPENAI_MODEL env var).
+        temperature: sampling temperature for the model.
+        """
         self.input_file   = input_file
         self.output_file  = output_file
-        self.model_name   = model_name
+        # pick up ENV var if not explicitly given:
+        self.model_name = (
+                model_name
+                or os.getenv("OPENAI_MODEL")
+                or "gpt-3.5-turbo"
+                )
         self.temperature  = temperature
     @staticmethod
     def sanitize_opportunity(opportunity: dict) -> dict:
@@ -108,13 +127,37 @@ class Scorer:
         """Run the full pipeline with a tqdm progress bar."""
         df      = pd.read_csv(self.input_file)
         records = df.to_dict(orient="records")
-        results = []
-        for opp in tqdm(records, desc="Scoring opportunities", unit="opp"):
-            results.append(self.score_opportunity(opp))
-        pd.DataFrame(results).to_csv(self.output_file, index=False)
-        print(f"Saved {len(results)} scored opportunities to '{self.output_file}'")
+        results = [self.score_opportunity(opp) for opp in tqdm(records, desc="Scoring opportunities")]
 
-# scorer.py
+        # build DataFrame & clean
+        cleaned = pd.DataFrame(results)
+        cleaned = cleaned.fillna("")  # no NaNs or None
+
+        # enforce column order
+        cols = [
+            "task_summary", "opportunity_name", "score",
+            "risk_score", "risk_level", "processing_time",
+            "tokens_used", "model", "status", "explanation"
+        ]
+
+        # validation: all required columns present
+        missing = set(cols) - set(cleaned.columns)
+        assert not missing, f"Missing columns in scored output: {missing}"
+
+        # validation: non-empty DataFrame
+        assert len(cleaned) > 0, "Scoring produced an empty result set"
+
+        cleaned = cleaned[cols]
+
+        # save with clean CSV settings
+        cleaned.to_csv(
+            self.output_file,
+            index=False,
+            encoding="utf-8-sig",
+            quoting=csv.QUOTE_MINIMAL,
+            lineterminator="\n"
+        )
+        print(f"Saved {len(cleaned)} scored opportunities to '{self.output_file}'")
 
 def main():
     """CLI entry-point for scoring."""

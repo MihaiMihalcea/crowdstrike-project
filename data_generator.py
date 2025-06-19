@@ -1,4 +1,5 @@
 import random
+import csv
 import pandas as pd
 from opportunity_generator import generate_opportunity  # updated below to accept a flag
 
@@ -30,6 +31,13 @@ def save_opportunities_to_csv(
         None
     """
     df = generate_opportunity_dataframe(num_opportunities)
-    df.to_csv(filename, index=False)
+    df.to_csv(
+        filename,
+        index=False,
+        header=True,
+        encoding="utf-8-sig",
+        quoting=csv.QUOTE_MINIMAL,
+        lineterminator="\n"
+    )
     print(f"CSV file saved as '{filename}'")
 
