@@ -21,10 +21,10 @@ pip install -e .
 🔧 Configuration
 
 Create a .env file in the project root with:
-
+```text
 OPENAI_API_KEY=sk-...your key...
 OPENAI_MODEL=gpt-3.5-turbo  # or gpt-4o-mini, gpt-4, etc.
-
+```
 Ensure .env is listed in .gitignore.
 
 ### 📁 Project Structure
