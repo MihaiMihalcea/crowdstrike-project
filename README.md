@@ -47,11 +47,11 @@ Ensure .env is listed in .gitignore.
 🚀 Usage
 
 After installation, run one of the following commands:
-
+```text
 python main.py                  # Generate data and score opportunities
 python main.py --skip-generate  # Skip data generation, only score existing CSV
 python main.py --skip-score     # Generate data only, skip scoring
-
+```
 🧩 Extensibility
 
 Add new themes: Update opportunity_themes_data.py or point to a new data source.
