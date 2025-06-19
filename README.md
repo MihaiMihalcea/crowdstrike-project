@@ -29,7 +29,7 @@ Ensure .env is listed in .gitignore.
 
 ### 📁 Project Structure
 ```text
-/your_project/
+/crowdstrike-project/
 ├── data_generator.py            # CLI: opportunities generator
 ├── prompts.py                   # Prompt templates and system messages
 ├── constants.py                 # company, stages, and lead source lists
@@ -43,7 +43,7 @@ Ensure .env is listed in .gitignore.
 ├── requirements.txt             # pinned dependencies
 ├── synthetic_opportunities.csv  # generated input data
 └── scored_opportunities.csv     # scored output data
-
+```
 🚀 Usage
 
 After installation, run one of the following commands:
