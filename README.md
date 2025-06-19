@@ -27,8 +27,8 @@ OPENAI_MODEL=gpt-3.5-turbo  # or gpt-4o-mini, gpt-4, etc.
 
 Ensure .env is listed in .gitignore.
 
-📁 Project Structure
-
+### 📁 Project Structure
+```text
 /your_project/
 ├── data_generator.py            # CLI: opportunities generator
 ├── prompts.py                   # Prompt templates and system messages
